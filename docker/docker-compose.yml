@@ -1,0 +1,10 @@
+version: "2"
+services:
+  epavapi:
+    image: registry.jorgeadolfo.com/epav-sugar-syntax-api
+    ports:
+      - 8081:5000
+  gui:
+    image: registry.jorgeadolfo.com/epav-sugar-syntax-gui
+    ports:
+      - 8080:5000

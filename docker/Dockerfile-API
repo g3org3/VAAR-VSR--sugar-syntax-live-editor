@@ -1,0 +1,11 @@
+FROM registry.jorgeadolfo.com/epav-api:1.1.0
+
+RUN apt-get update && apt-get install -y unzip
+
+RUN mkdir /sugar-api
+WORKDIR /sugar-api
+
+RUN pip install -U flask-cors
+
+COPY server server
+WORKDIR /sugar-api/server
