@@ -2,8 +2,14 @@ FROM node:10-alpine
 
 RUN npm i -g serve
 
-RUN mkdir /build
-WORKDIR /build
+RUN mkdir /app
+WORKDIR /app
 
-COPY build build
-CMD ["serve", "build"]
+COPY ./package.json ./package.json
+RUN npm i
+
+COPY . .
+
+RUN npm run build
+
+CMD ["serve", "build", "-l", "8080"]

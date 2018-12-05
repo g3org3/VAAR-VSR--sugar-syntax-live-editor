@@ -20,7 +20,7 @@ const example = `
 
 const URL =
   process.env.NODE_ENV === "production"
-    ? "http://localhost:8081/api/run"
+    ? "http://editorapi:5000/api/run"
     : "/api/run";
 
 console.log({ URL, env: process.env });
